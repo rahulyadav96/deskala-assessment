@@ -1,0 +1,50 @@
+
+.formtitle{
+    text-align: center;
+    color: rgb(75, 98, 228);
+}
+
+.inputFieldName{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.wrapper{
+  margin: 10px 0;
+}
+
+.wrapper > input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    margin: 3px auto 5px;
+    outline: 0;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.notice{
+    color:rgb(121, 139, 239);
+    font-size: 12px;
+    text-align: right;
+    font-weight: 500;
+    margin: 0;
+}
+
+.submit{
+    
+    display: flex;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px 20px ;
+    background-color:rgb(109, 130, 249);
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  
+}
