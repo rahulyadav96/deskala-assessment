@@ -19,7 +19,7 @@ const signUp = async(req,res)=>{
 
         //find the admin by email to check does admin already registered or not
         admin = await Admin.findOne({email:req.body.email}).lean().exec();
-       console.log(admin);
+       
         //if admin exist , return 
         if(admin)  return res.status(401).json({status:'failed',message:'This email already registered, try with another one.'}); 
 

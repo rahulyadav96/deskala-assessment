@@ -39,7 +39,7 @@ adminSchema.pre('save', function(next){
 //method for verify admin while login
 
 adminSchema.methods.verifyPassword = function(enterdPassord){
-    console.log(enterdPassord)
+   
     //get hashedpassword 
     const hashedPassword = this.password
 
