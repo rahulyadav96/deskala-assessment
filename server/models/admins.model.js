@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const adminSchema = new mongoose.Schema({
     email:{type:String, required:true, unique:true},
-    phone_no:{type:Number, required:true},
+    phone:{type:Number, required:true},
     password:{type:String, required:true}
 },{
     versionKey:false,
@@ -17,7 +17,7 @@ adminSchema.pre('save', function(next){
     //check if the password is modified or not
     //if not modified return next
 
-    if(this.isModified('password')) return next();
+    if(!this.isModified('password')) return next();
 
     //if modified than  hash it before saving
     bcrypt.hash(this.password,8,(err,hashed)=>{
@@ -39,7 +39,7 @@ adminSchema.pre('save', function(next){
 //method for verify admin while login
 
 adminSchema.methods.verifyPassword = function(enterdPassord){
-
+    console.log(enterdPassord)
     //get hashedpassword 
     const hashedPassword = this.password
 
