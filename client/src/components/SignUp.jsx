@@ -7,7 +7,9 @@ export const SignUp = () => {
 
     //form inputs
     const [formData,setFormData] = useState({
-
+        email:"",
+        phone:"",
+        password:"",
     })
 
     // funtion to handle input fields
@@ -30,10 +32,10 @@ export const SignUp = () => {
         <main className={containerStyle.formContainer}>
           
             <h2 className={formStyle.formtitle}>Sign Up</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={formStyle.container}>
                 <div className={formStyle.wrapper}>
-                  <label for="email" className={formStyle.inputFieldName}>
+                  <label htmlFor="email" className={formStyle.inputFieldName}>
                     Email
                   </label>
                   <input
@@ -48,7 +50,7 @@ export const SignUp = () => {
                 </div>
 
                 <div className={formStyle.wrapper}>
-                  <label for="phone" className={formStyle.inputFieldName}>
+                  <label htmlFor="phone" className={formStyle.inputFieldName}>
                     Phone Number
                   </label>
                   <input
@@ -62,7 +64,7 @@ export const SignUp = () => {
                 </div>
 
                 <div className={formStyle.wrapper}>
-                  <label for="password" className={formStyle.inputFieldName}>
+                  <label htmlFor="password" className={formStyle.inputFieldName}>
                     Password
                   </label>
                   <input
@@ -77,7 +79,7 @@ export const SignUp = () => {
                 </div>
               </div>
 
-              <input type="submit" onSubmit={handleSubmit} className={formStyle.submit} value="Sign Up" />
+              <input type="submit" className={formStyle.submit} value="Sign Up" />
             </form>
           
         </main>
