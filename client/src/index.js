@@ -1,13 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { AuthContextProvider } from "./context/AuthContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Login } from "./components/Login";
+import { SignUp } from "./components/SignUp";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="login" element={<Login />} />
+        <Route path="sign_up" element={<SignUp />} />
+      </Routes>
+        
+      </BrowserRouter>
+    </AuthContextProvider>
   </React.StrictMode>
 );
 

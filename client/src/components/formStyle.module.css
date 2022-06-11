@@ -27,7 +27,7 @@
 }
 
 .notice{
-    color:rgb(121, 139, 239);
+    color:rgb(65, 93, 249);
     font-size: 12px;
     text-align: right;
     font-weight: 500;
@@ -40,11 +40,11 @@
     margin: auto;
     box-sizing: border-box;
     padding: 10px 20px ;
-    background-color:rgb(109, 130, 249);
+    background-color:rgb(75, 98, 228);
     border: 0;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 3px;
+    font-size: 16px;
     color: white;
     cursor: pointer;
-  
+    margin-top: 80px;
 }

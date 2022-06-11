@@ -1,12 +1,12 @@
 .formContainer{
-    width: 500px;
-    
+    width: 50%;
+    background-color: white;
     box-sizing: border-box;
     margin-top: 50px;
     padding: 20px;
     width:auto;
-    max-width: 500px;
-    min-width: 350px;
+    max-width: 400px;
+    min-width: 250px;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin: 30px auto;
