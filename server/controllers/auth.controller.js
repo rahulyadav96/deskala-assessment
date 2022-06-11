@@ -43,7 +43,6 @@ const signUp = async(req,res)=>{
 
 const login = async(req,res)=>{
 
-    
     try{
 
         var admin;

@@ -1,7 +1,11 @@
 import formStyle from "./formStyle.module.css";
 import containerStyle from "./container.module.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import axios from "axios";
+import {AuthContext} from "../context/AuthContext";
+
+
 
 export const Login = () => {
      //form inputs
@@ -9,6 +13,34 @@ export const Login = () => {
         email:"",
         password:"",
     })
+
+    const {handleAuth} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    //handleLogin 
+
+    const handleLogin = (e)=>{
+      e.preventDefault();
+      try{
+
+        axios.post('/login',formData)
+        .then((res)=>{
+          console.log(res.data);
+          alert("login success");
+          handleAuth(res.data);
+          navigate("/dashboard")
+
+        })
+        .catch((err)=>{
+    
+          console.error(err);
+        })
+
+      }catch(err){
+        console.error(err)
+      }
+    }
 
     // funtion to handle input fields
     const handleChange = (e) =>{
@@ -19,8 +51,9 @@ export const Login = () => {
 
     // function to handle form submission
     const handleSubmit = (e)=>{
+        
+        
 
-        e.preventDefault();
         console.log(formData);
     }
   return (
@@ -29,19 +62,20 @@ export const Login = () => {
         <main className={containerStyle.formContainer}>
           
             <h2 className={formStyle.formtitle}>Login</h2>
-            <form onSubmit={handleSubmit} method="post">
+            <form onSubmit={handleLogin} method="post" >
               <div className={formStyle.container}>
                 <div className={formStyle.wrapper}>
                   <label htmlFor="email" className={formStyle.inputFieldName}>
                     Email id
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     id="email"
                     placeholder="enter your email id"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                   />
                 </div>
 
@@ -50,7 +84,7 @@ export const Login = () => {
                     Password
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     id="password"
                     placeholder="enter your password"
                     name="password"
