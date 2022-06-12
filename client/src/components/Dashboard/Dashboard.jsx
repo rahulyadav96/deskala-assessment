@@ -37,6 +37,17 @@ export const Dashboard = () => {
 const handlePopup = () =>{
     setPopup(!popup)
 }
+
+//function to delete candidate
+const handleDelete = (id)=>{
+
+    axios.delete(`/candidates/${id}`).then((res)=>{
+        alert("Deleted")
+    })
+    .catch(err=>{
+        console.error(err)
+    })
+}
   return (
     <>
       <div className="dashboard">
@@ -61,7 +72,7 @@ const handlePopup = () =>{
             <tbody>
               {candidates?.map((candidate, i) => (
                 <tr
-                  key={candidate.id}
+                  key={candidate._id}
                   className={i % 2 == 0 ? "skyBg" : "whiteBg"}
                 >
                   <td>{i + 1}</td>
@@ -75,7 +86,7 @@ const handlePopup = () =>{
                     <button>edit</button>
                   </td>
                   <td>
-                    <button >delete</button>
+                    <button onClick={()=> handleDelete(candidate._id)}>delete</button>
                   </td>
                 </tr>
               ))}
