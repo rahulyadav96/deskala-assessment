@@ -37,6 +37,7 @@ export const SignUp = () => {
         })
         .catch((err) => {
           console.error(err);
+          alert(err.response.data.message)
         });
     } catch (err) {
       console.error(err);

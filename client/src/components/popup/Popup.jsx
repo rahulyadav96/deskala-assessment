@@ -22,6 +22,9 @@ export const Popup = ({handlePopup}) => {
         alert("Data added");
         handlePopup();
     })
+    .catch(err=>{
+        alert(err.response.data.message)
+    })
   };
 
   //handle form inputs
