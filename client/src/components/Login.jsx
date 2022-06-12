@@ -49,13 +49,6 @@ export const Login = () => {
         setFormData({...formData,[name]:value});
     }
 
-    // function to handle form submission
-    const handleSubmit = (e)=>{
-        
-        
-
-        console.log(formData);
-    }
   return (
     <>
       <div id="login">

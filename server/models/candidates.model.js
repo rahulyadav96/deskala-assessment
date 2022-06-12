@@ -7,7 +7,8 @@ const candidateSchema = new mongoose.Schema({
     state:{type:String, required:true},
     pincode:{type:String, required:true},
     address:{type:String, required:true},
-},{
+   
+},{ 
     versionKey:false,
     timestamps:true
 })
